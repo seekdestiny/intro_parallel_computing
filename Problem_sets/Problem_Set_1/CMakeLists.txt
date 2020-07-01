@@ -6,6 +6,13 @@
 ############################################################################
 
 # collect source files
+cmake_minimum_required(VERSION 3.5)
+
+find_package(CUDA  REQUIRED)
+find_package(OpenCV REQUIRED)
+
+#include_directories("${CUDA_INCLUDE_DIRS}")
+link_libraries(${OpenCV_LIBS} )
 
 file( GLOB  hdr *.hpp *.h )
 file( GLOB  cu  *.cu)
